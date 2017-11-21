@@ -69,14 +69,30 @@
           </div>
         </el-form>
 	</div>
+</div>
 </template>
 <script>
+const cityOptions = ['上海', '北京', '广州', '深圳',];
 export default {
-	name: 'Filtrate',
+	name: 'Filter',
     data() {
       return {
         activeIndex: '1',
-        activeIndex2: '1'
+        checkAll: false,
+        checkedCities: ['上海', '北京'],
+        cities: cityOptions,
+        isIndeterminate: true,
+        form: {
+          name: '',
+          region: '',
+          date1: '',
+          date2: '',
+          delivery: false,
+          type: [],
+          resource: '',
+          desc: '',
+          quyu:'',
+        },
       };
     },
 

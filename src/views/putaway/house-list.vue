@@ -1,6 +1,7 @@
 
 <template>
   <div class="d-main">
+    <filter-main></filter-main>
     <h2 class="title">二手房上下架管理</h2>
     <!-- 上下架管理列表 -->
     <div class="d-content">
@@ -116,7 +117,28 @@
 </template>
 
 <script>
+  // import Filter from '../../components/filter.vue'
 
+  // export default {
+  //   components: {
+  //     filter:Filter,
+  //   }
+  // }
+
+
+import Filter from '@/components/filter.vue'
+// import Filter from '../../components/filter.vue'
+
+  export default {
+    data(){
+   
+    },
+
+    components: {
+      filterMain:Filter,
+      // filter:Filter,
+    }
+  }
 
 </script>
 <style>

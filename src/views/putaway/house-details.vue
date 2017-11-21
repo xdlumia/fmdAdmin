@@ -49,7 +49,7 @@
 
 <script>
   export default {
-    name: 'search',
+    name: 'Filter',
     data () {
       return {}
     }
