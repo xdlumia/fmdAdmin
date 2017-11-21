@@ -1,0 +1,231 @@
+<!DOCTYPE HTML>
+<html lang="zh-cn">
+<head>
+<meta charset="utf-8" />
+<title>房源详情</title>
+<meta name="keywords" content="#" />
+<meta name="description" content="#" />
+<meta charset="utf-8" />
+<!-- 强制使用高版本浏览器渲染 -->
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<!-- 强制使用webkit -->
+<meta name="renderer" content="webkit">
+<!-- 禁止百度移动端转码 -->
+<meta http-equiv="Cache-Control" content="no-transform " />
+<!-- 清除缓存刷新 -->
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Cache-Control" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<link rel="stylesheet" type="text/css" href="http://at.alicdn.com/t/font_479217_y60ma0svztsgiudi.css">
+<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+<link rel="stylesheet" type="text/css" href="assets/css/base.css">
+<link rel="stylesheet" type="text/css" href="assets/css/header-nav.css"> <!-- 导航 -->
+<link rel="stylesheet" type="text/css" href="assets/css/house-details.css"> <!-- 房源详情页 -->
+<link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+<script src="https://unpkg.com/vue"></script>
+<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+</head>
+<body>
+<div id="details" style="background: #fff;">
+    <header class="header">
+        <el-menu
+          :default-active="activeIndex"
+          class="el-menu-demo"
+          mode="horizontal"
+          background-color="#222"
+          text-color="#fff"
+          active-text-color="#ffd04b">
+          <div class="d-main">
+              <a href="/" class="logo">房脉动管理系统</a>
+              <el-menu-item index="1">上架管理</el-menu-item>
+              <el-menu-item index="2"><a>文章管理</a></el-menu-item>
+              <el-menu-item index="3"><a>用户管理</a></el-menu-item>
+              <el-menu-item index="4"><a>预约管理</a></el-menu-item>
+              <el-menu-item index="5"><a>系统设置</a></el-menu-item>
+              <div class="user">
+                  你好,
+                  <span class="user-name">FJD</span>
+                  <span class="logout ml20">退出</span>
+              </div>
+          </div>
+        </el-menu>
+    </header>
+    <div class="side-nav">
+        <div class="title b">上架管理</div>
+        <div class="nav-main">
+            <a class="nav-item active">二手房</a>
+            <a class="nav-item">租房</a>
+            <a class="nav-item">写字楼出租</a>
+            <a class="nav-item">写字楼出售</a>
+            <a class="nav-item">商铺出租</a>
+        </div>
+    </div>
+    <el-form :label-position="labelPosition" label-width="100px" :model="form" class="house-details el-form-small">
+        <div class="details-top mt60">
+            <div class="d-main">
+                <div class="search-main">
+                   <a  class="logo" href=""><img src=""alt=""></a>
+                   <h5 class="name">详情页</h5>
+                   <div class="seachr-box d-disabled fr">
+                       <input type="text" class="d-disabled" disabled="" placeholder="请输入区域、商圈或者楼盘名开始找房">
+                       <i class="iconfont icon-search"></i>
+                   </div>
+                </div>
+                <div class="details-title">
+                    <div class="d-input-block">
+                        <el-input v-model="form.name" placeholder="请输入标题"></el-input>
+                    </div>
+                    <div class="d-input-block">
+                        <el-input v-model="form.name" placeholder="请输入副标题"></el-input>
+                    </div>
+                    <div class="d-input-inline">
+                        <el-input v-model="form.name" placeholder="月租-元/月"></el-input>
+                    </div>
+                    <div class="d-input-inline">
+                        <el-input v-model="form.name" placeholder="日租-元/平米/天"></el-input>
+                    </div>
+                    <div class="d-input-inline">
+                        <el-input v-model="form.name" placeholder="销售面积-平米"></el-input>
+                    </div>
+                    <div class="d-input-inline">
+                        <el-input v-model="form.name" placeholder="月租-元/月"></el-input>
+
+                    </div>
+                    <div class="d-input-inline">
+                        <el-select v-model="form.date1" placeholder="活动区域">
+                          <el-option label="区域一" value="shanghai"></el-option>
+                          <el-option label="区域二" value="beijing"></el-option>
+                        </el-select>
+                    </div>
+                    <div class="d-input-inline">
+                        <el-select v-model="form.quyu2" placeholder="活动区域">
+                          <el-option label="区域一" value="shanghai"></el-option>
+                          <el-option label="区域二" value="beijing"></el-option>
+                        </el-select>
+                    </div>
+                    <div class="d-input-inline">
+                        <el-select v-model="form.quyu3" placeholder="活动区域">
+                          <el-option label="区域一" value="shanghai"></el-option>
+                          <el-option label="区域二" value="beijing"></el-option>
+                        </el-select>
+                    </div>
+                    <div class="d-input-inline">
+                        <el-input v-model="form.name" placeholder="总楼层-层"></el-input>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="d-main pb50"> 
+            <div class="d-breadcrumb">
+                <el-breadcrumb separator-class="el-icon-arrow-right">
+                  <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>
+                  <el-breadcrumb-item>活动管理</el-breadcrumb-item>
+                  <el-breadcrumb-item>活动列表</el-breadcrumb-item>
+                  <el-breadcrumb-item>活动详情</el-breadcrumb-item>
+                </el-breadcrumb>
+            </div> 
+            <div class="d-details-content" style="width: 710px;">
+                <h3 class="title">基本信息</h3>
+                <div class="d-info-block">
+                    <div class="d-info-title">基本属性</div>
+                    <div class="d-info-con">
+                      <el-form-item label="审批人" class="w240 fl">
+                        <el-input v-model="form.user" placeholder="审批人"></el-input>
+                      </el-form-item>
+
+                      <el-form-item label="活动区域" class="w240 fl">
+                        <el-select v-model="form.region" placeholder="活动区域">
+                          <el-option label="区域一" value="shanghai"></el-option>
+                          <el-option label="区域二" value="beijing"></el-option>
+                        </el-select>
+                      </el-form-item>
+                    </div>
+                </div>
+                <h3 class="title">房源特色</h3>
+                <div class="d-info-block">
+                    <div class="d-info-title">房屋卖点</div>
+                    <div class="d-clear"></div>
+                    <el-col :span="4">
+                        <el-checkbox v-model="checked">备选项</el-checkbox>
+                    </el-col>
+                    <el-col :span="4">
+                        <el-checkbox v-model="checked">备选项</el-checkbox>
+                    </el-col>
+                    <el-col :span="4">
+                        <el-checkbox v-model="checked">备选项</el-checkbox>
+                    </el-col>
+                    <el-col :span="4">
+                        <el-checkbox v-model="checked">备选项</el-checkbox>
+                    </el-col>
+                    <el-col :span="4">
+                        <el-checkbox v-model="checked">备选项</el-checkbox>
+                    </el-col>
+                    <el-col :span="4">
+                        <el-checkbox v-model="checked">备选项</el-checkbox>
+                    </el-col>
+                    <!-- 核心亮点 -->
+                    <div class="d-clear"></div>
+                    <div class="d-info-title mt20">核心亮点</div>
+                    <el-input type="textarea" v-model="form.desc"></el-input>
+                    <!-- 核心亮点 -->
+                    <div class="d-clear"></div>
+                    <div class="d-info-title mt20">核心亮点</div>
+                    <el-input type="textarea" v-model="form.desc"></el-input>
+                    <!-- 核心亮点 -->
+                    <div class="d-clear"></div>
+                    <div class="d-info-title mt20">核心亮点</div>
+                    <el-input type="textarea" v-model="form.desc"></el-input>
+                    <!-- 核心亮点 -->
+                    <div class="d-clear"></div>
+                    <div class="d-info-title mt20">核心亮点</div>
+                    <el-input type="textarea" v-model="form.desc"></el-input>
+                    
+                    <div class="mt20">
+                        <el-button size="medium" type="primary" @click="onSubmit">立即保存</el-button>
+                        <el-button size="medium">取消</el-button>
+                    </div>
+                </div>
+            </div>
+        </div> 
+    </el-form>
+</div>
+
+
+
+<script>
+
+const cityOptions = ['上海', '北京', '广州', '深圳',];
+  var Main = {
+    data() {
+      return {
+        activeIndex: '1',
+        checkAll: false,
+        checkedCities: ['上海', '北京'],
+        cities: cityOptions,
+        isIndeterminate: true,
+        labelPosition: 'right',
+        form: {
+          name: '',
+          region: '',
+          date1: '',
+          date2: '',
+          delivery: false,
+          type: [],
+          resource: '',
+          desc: '',
+          quyu:'',
+        },
+      };
+    },
+    methods: {
+      handleCheckAllChange(val) {
+        this.checkedCities = val ? cityOptions : [];
+        this.isIndeterminate = false;
+      },
+    }
+  };
+var Ctor = Vue.extend(Main)
+new Ctor().$mount('#details')
+</script>  
+</body>
+</html>

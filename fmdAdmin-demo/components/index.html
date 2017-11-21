@@ -1,0 +1,163 @@
+<!DOCTYPE HTML>
+<html lang="zh-cn">
+<head>
+<meta charset="utf-8" />
+<title>房脉动后台管理系统吧</title>
+<meta name="keywords" content="#" />
+<meta name="description" content="#" />
+<meta charset="utf-8" />
+<!-- 强制使用高版本浏览器渲染 -->
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<!-- 强制使用webkit -->
+<meta name="renderer" content="webkit">
+<!-- 禁止百度移动端转码 -->
+<meta http-equiv="Cache-Control" content="no-transform " />
+<!-- 清除缓存刷新 -->
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Cache-Control" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<link rel="stylesheet" type="text/css" href="http://at.alicdn.com/t/font_479217_ortdgx668r9c0udi.css">
+<link rel="stylesheet" type="text/css" href="assets/css/base.css">
+<link rel="stylesheet" type="text/css" href="assets/css/ele.css">
+<link rel="stylesheet" type="text/css" href="assets/css/header-nav.css">
+<link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+<script src="https://unpkg.com/vue"></script>
+<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+</head>
+<body>
+<div id="index">
+    <header class="header">
+        <el-menu
+          :default-active="activeIndex"
+          class="el-menu-demo"
+          mode="horizontal"
+          background-color="#222"
+          text-color="#fff"
+          active-text-color="#ffd04b">
+          <div class="d-main">
+              <a href="/" class="logo">房脉动管理系统</a>
+              <el-menu-item index="1">上架管理</el-menu-item>
+              <el-menu-item index="2"><a>文章管理</a></el-menu-item>
+              <el-menu-item index="3"><a>用户管理</a></el-menu-item>
+              <el-menu-item index="4"><a>预约管理</a></el-menu-item>
+              <el-menu-item index="5"><a>系统设置</a></el-menu-item>
+              <div class="user">
+                  你好,
+                  <span class="user-name">FJD</span>
+                  <span class="logout ml20">退出</span>
+              </div>
+          </div>
+        </el-menu>
+    </header>
+    <div class="side-nav">
+        <div class="title b">上架管理</div>
+        <div class="nav-main">
+            <a class="nav-item active">二手房</a>
+            <a class="nav-item">租房</a>
+            <a class="nav-item">写字楼出租</a>
+            <a class="nav-item">写字楼出售</a>
+            <a class="nav-item">商铺出租</a>
+        </div>
+    </div>
+
+    <div class="d-main">
+        <div class="d-content mt20">
+          <div class="d-filter-main">
+              <div class="d-filter-item">
+                  <div class="d-filter-key">位置</div>
+                  <div class="d-filter-val">
+                      <div class="d-filter-val-tab mb10">
+                          <span class="active">区域<i class="iconfont icon-arrow-down"></i></span>
+                          <span>地铁<i class="iconfont icon-arrow-down"></i></span>
+                      </div>
+                      <div class="d-filter-val-list">
+                          <a data-id="110102" href="javascript:;">西城区</a>
+                          <a data-id="110102" href="javascript:;">西城区</a>
+                          <a data-id="110102" href="javascript:;">西城区</a><a data-id="110102" href="javascript:;">西城区</a>
+                          <a data-id="110102" href="javascript:;">西城区</a>
+                          <a data-id="110102" href="javascript:;">西城区</a>
+                          <a data-id="110102" href="javascript:;">西城区</a><a data-id="110102" href="javascript:;">西城区</a>
+                          <a data-id="110102" href="javascript:;">西城区</a>
+                          <a data-id="110102" href="javascript:;">西城区</a>
+                          <a data-id="110102" href="javascript:;">西城区</a><a data-id="110102" href="javascript:;">西城区</a>
+                          <a data-id="110102" href="javascript:;">西城区</a>
+                          <a data-id="110102" href="javascript:;">西城区</a>
+                          <a data-id="110102" href="javascript:;">西城区</a><a data-id="110102" href="javascript:;">西城区</a>
+                          <a data-id="110102" href="javascript:;">西城区</a>
+                          <a data-id="110102" href="javascript:;">西城区</a>
+                          <a data-id="110102" href="javascript:;">西城区</a>
+                      </div>
+                  </div>
+              </div>
+              <!-- 价格 -->
+              <div class="d-filter-item">
+                  <div class="d-filter-key">价格</div>
+                  <div class="d-filter-val">
+                      <div class="d-filter-val-tab mb15">
+                          <span class="active">总价<i class="iconfont icon-arrow-down"></i></span>
+                          <span>地铁<i class="iconfont icon-arrow-down"></i></span>
+                      </div>
+                      <div class="d-filter-val-list">
+                          <el-checkbox v-for="city in cities" :label="city" :key="city">{{city}}</el-checkbox>
+                      </div>
+                  </div>
+              </div>
+              <!-- 面积 -->
+              <div class="d-filter-item">
+                  <div class="d-filter-key">面积</div>
+                  <div class="d-filter-val">
+                      <div class="d-filter-val-list">
+                          <el-checkbox v-for="city in cities" :label="city" :key="city">{{city}}</el-checkbox>
+                      </div>
+                  </div>
+              </div>
+              <!-- 装修 -->
+              <div class="d-filter-item">
+                  <div class="d-filter-key">装修</div>
+                  <div class="d-filter-val">
+                      <div class="d-filter-val-list">
+                            <el-option
+                              v-for="item in options"
+                              :key="item.value"
+                              :label="item.label"
+                              :value="item.value">
+                            </el-option>
+                      </div>
+                  </div>
+              </div>
+          </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script>
+const cityOptions = ['上海', '北京', '广州', '深圳',];
+  var Main = {
+    data() {
+      return {
+        activeIndex: '1',
+        checkAll: false,
+        checkedCities: ['上海', '北京'],
+        cities: cityOptions,
+        isIndeterminate: true
+      };
+    },
+    methods: {
+      handleCheckAllChange(val) {
+        this.checkedCities = val ? cityOptions : [];
+        this.isIndeterminate = false;
+      },
+      handleCheckedCitiesChange(value) {
+        let checkedCount = value.length;
+        this.checkAll = checkedCount === this.cities.length;
+        this.isIndeterminate = checkedCount > 0 && checkedCount < this.cities.length;
+      }
+    }
+  };
+var Ctor = Vue.extend(Main)
+new Ctor().$mount('#index')
+</script>  
+</body>
+</html>
