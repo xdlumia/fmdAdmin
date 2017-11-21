@@ -1,6 +1,5 @@
 
 <template>
-<side-nav></side-nav>
   <div class="d-main">
     <h2 class="title">二手房上下架管理</h2>
     <!-- 上下架管理列表 -->
@@ -117,17 +116,7 @@
 </template>
 
 <script>
-import SideNav from '@/components/side-nav'
 
-  export default {
-    data(){
-   
-    },
-
-    components: {
-      sideNav:SideNav,
-    }
-  }
 
 </script>
 <style>
