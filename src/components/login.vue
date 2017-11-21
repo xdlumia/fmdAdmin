@@ -1,44 +1,47 @@
-<el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal" @select="handleSelect">
-  <el-menu-item index="1">处理中心</el-menu-item>
-  <el-submenu index="2">
-    <template slot="title">我的工作台</template>
-    <el-menu-item index="2-1">选项1</el-menu-item>
-    <el-menu-item index="2-2">选项2</el-menu-item>
-    <el-menu-item index="2-3">选项3</el-menu-item>
-  </el-submenu>
-  <el-menu-item index="3"><a href="https://www.ele.me" target="_blank">订单管理</a></el-menu-item>
-</el-menu>
-<div class="line"></div>
-<el-menu
-  :default-active="activeIndex2"
-  class="el-menu-demo"
-  mode="horizontal"
-  @select="handleSelect"
-  background-color="#545c64"
-  text-color="#fff"
-  active-text-color="#ffd04b">
-  <el-menu-item index="1">处理中心</el-menu-item>
-  <el-submenu index="2">
-    <template slot="title">我的工作台</template>
-    <el-menu-item index="2-1">选项1</el-menu-item>
-    <el-menu-item index="2-2">选项2</el-menu-item>
-    <el-menu-item index="2-3">选项3</el-menu-item>
-  </el-submenu>
-  <el-menu-item index="3"><a href="https://www.ele.me" target="_blank">订单管理</a></el-menu-item>
-</el-menu>
+<template>
+  <div class="login">
+    <div class="login-box">
+      <h2>登录</h2>
+      <form @submit.prevent='sendLogin' autocomplete="off">
+        <div><input placeholder="请输入用户名" type="text" name="user" ref="userInput" /></div>
+        <div><input placeholder="请输入密码" type="password" name="password" /></div>
+        <div class="login-btn"><input type="submit" value="一键登入" /></div>
+      </form>
+      <div class="back-index">
+        <router-link  to="/">首页>>></router-link>
+      </div>
+    </div>
+  </div>
+</template>
 
 <script>
   export default {
-    data() {
-      return {
-        activeIndex: '1',
-        activeIndex2: '1'
-      };
+    name: 'login',
+    data () {
+      return {}
     },
     methods: {
-      handleSelect(key, keyPath) {
-        console.log(key, keyPath);
+      sendLogin () {
+          // 登录
+        let userName = this.$refs.userInput.value;
+        this.$local.save("miaov", {
+            login: true,
+            userName: userName
+        })
+
+        let redirect = this.$route.query.redirect
+
+        if(!redirect){
+          redirect = 'project'
+        }
+
+        this.$router.push({
+          path: '/'+redirect
+        })
       }
     }
   }
 </script>
+<style>
+
+</style>
