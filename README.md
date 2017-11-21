@@ -1,6 +1,6 @@
 # fmdadmin
 
-> 房脉动后台管理系统
+> 房脉动
 
 ## Build Setup
 
