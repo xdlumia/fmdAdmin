@@ -1,7 +1,7 @@
 <template>
   <div>
     <side-nav></side-nav>
-    <side-nav></side-nav>
+
     <transition name="fade" mode="out-in">
       <router-view></router-view>
     </transition>
@@ -10,7 +10,7 @@
 
 <script>
   import SideNav from '@/components/side-nav'
-  import Filter from '@/components/filter'
+  // import Filter from '@/components/filter'
 
   export default {
     data(){
@@ -18,7 +18,8 @@
     },
 
     components: {
-      sideNav:Filter,
+      sideNav:SideNav,
+      // filter:Filter,
     }
   }
 </script>

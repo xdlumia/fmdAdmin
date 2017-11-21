@@ -7,15 +7,15 @@
 	          mode="horizontal"
 	          background-color="#222"
 	          text-color="#fff"
-	          router = true
+	          router=true
 	          active-text-color="#33ba9b">
 	          <div class="d-main">
 	              <a href="/" class="logo">房脉动管理系统</a>
-	              <el-menu-item index="1">上架管理</el-menu-item>
-	              <el-menu-item index="2"><a>文章管理</a></el-menu-item>
+	              <el-menu-item index="/">上架管理</el-menu-item>
+	              <el-menu-item index="/article"><a>文章管理</a></el-menu-item>
 	              <el-menu-item index="3"><a>用户管理</a></el-menu-item>
 	              <el-menu-item index="4"><a>预约管理</a></el-menu-item>
-	              <el-menu-item index="5"><a>系统设置</a></el-menu-item>
+	              <el-menu-item index="/housedetailst"><a>系统设置</a></el-menu-item>
 	              <div class="user">
 	                  你好,
 	                  <span class="user-name">FJD</span>
@@ -30,8 +30,7 @@
 export default {
     data() {
       return {
-        activeIndex: '1',
-        activeIndex2: '1'
+        activeIndex: '/',
       };
     },
     methods: {
@@ -39,5 +38,6 @@ export default {
         console.log(key, keyPath);
       }
     }
+
   }
 </script>

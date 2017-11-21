@@ -1,29 +1,73 @@
 <template>
     <div>
-		<header class="header">
-	        <el-menu
-	          :default-active="activeIndex"
-	          class="el-menu-demo"
-	          mode="horizontal"
-	          background-color="#222"
-	          text-color="#fff"
-	          router = true
-	          active-text-color="#33ba9b">
-	          <div class="d-main">
-	              <a href="/" class="logo">房脉动管理系统</a>
-	              <el-menu-item index="1">上架管理</el-menu-item>
-	              <el-menu-item index="2"><a>文章管理</a></el-menu-item>
-	              <el-menu-item index="3"><a>用户管理</a></el-menu-item>
-	              <el-menu-item index="4"><a>预约管理</a></el-menu-item>
-	              <el-menu-item index="5"><a>系统设置</a></el-menu-item>
-	              <div class="user">
-	                  你好,
-	                  <span class="user-name">FJD</span>
-	                  <span class="logout ml20">退出</span>
-	              </div>
-	          </div>
-	        </el-menu>
-	    </header>
+		<div class="d-main" style="padding-top: 60px">
+        <!-- 条件筛选 -->
+        <el-form ref="form" :model="form" label-width="80px">
+          <div class="d-content mt20">
+            <div class="d-filter-main el-form-small">
+                <div class="d-filter-item">
+                    <div class="d-filter-key">位置</div>
+                    <div class="d-filter-val">
+                        <div class="d-filter-val-tab mb10">
+                            <span class="active">区域<i class="iconfont icon-arrow-down"></i></span>
+                            <span>地铁<i class="iconfont icon-arrow-down"></i></span>
+                        </div>
+                        <div class="d-filter-val-list">
+                            <a data-id="110102" href="javascript:;">西城区</a>
+                            <a data-id="110102" href="javascript:;">西城区</a>
+                            <a data-id="110102" href="javascript:;">西城区</a><a data-id="110102" href="javascript:;">西城区</a>
+                            <a data-id="110102" href="javascript:;">西城区</a>
+                            <a data-id="110102" href="javascript:;">西城区</a>
+                            <a data-id="110102" href="javascript:;">西城区</a><a data-id="110102" href="javascript:;">西城区</a>
+                            <a data-id="110102" href="javascript:;">西城区</a>
+                            <a data-id="110102" href="javascript:;">西城区</a>
+                            <a data-id="110102" href="javascript:;">西城区</a><a data-id="110102" href="javascript:;">西城区</a>
+                            <a data-id="110102" href="javascript:;">西城区</a>
+                            <a data-id="110102" href="javascript:;">西城区</a>
+                            <a data-id="110102" href="javascript:;">西城区</a><a data-id="110102" href="javascript:;">西城区</a>
+                            <a data-id="110102" href="javascript:;">西城区</a>
+                            <a data-id="110102" href="javascript:;">西城区</a>
+                            <a data-id="110102" href="javascript:;">西城区</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- 价格 -->
+                <div class="d-filter-item">
+                    <div class="d-filter-key">价格</div>
+                    <div class="d-filter-val">
+                        <div class="d-filter-val-tab mb15">
+                            <span class="active">总价<i class="iconfont icon-arrow-down"></i></span>
+                            <span>地铁<i class="iconfont icon-arrow-down"></i></span>
+                        </div>
+                        <div class="d-filter-val-list">
+                            <el-checkbox v-for="city in cities" :label="city" :key="city">{{city}}</el-checkbox>
+                        </div>
+                    </div>
+                </div>
+                <!-- 面积 -->
+                <div class="d-filter-item">
+                    <div class="d-filter-key">面积</div>
+                    <div class="d-filter-val">
+                        <div class="d-filter-val-list">
+                            <el-checkbox v-for="city in cities" :label="city" :key="city">{{city}}</el-checkbox>
+                        </div>
+                    </div>
+                </div>
+                <!-- 装修 -->
+                <div class="d-filter-item">
+                    <div class="d-filter-key">装修</div>
+                    <div class="d-filter-val">
+                        <div class="d-filter-val-list">
+                           <el-select v-model="form.region" placeholder="活动区域">
+                            <el-option label="区域一" value="shanghai"></el-option>
+                            <el-option label="区域二" value="beijing"></el-option>
+                          </el-select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          </div>
+        </el-form>
 	</div>
 </template>
 <script>

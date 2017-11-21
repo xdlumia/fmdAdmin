@@ -1,31 +1,28 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-Vue.use(Router)
+
 
 // 上架管理
-import ArticleMan from '@/views/articleMan'
-import Houselist from '@/views/putaway/house-list.vue'
-import Housedetailst from '@/views/putaway/house-details.vue'
-// // 系统设置
-// import Login from '@/views/layout.vue'
-// import Login from '@/views/layout.vue'
-// import Login from '@/views/layout.vue'
-// // 系统设置
-// import Login from '@/views/layout.vue'
-// import Login from '@/views/layout.vue'
-// import Login from '@/views/layout.vue'
+import PutawayMan from '@/views/articleMan'
+import Houselist from '@/views/putaway/house-list'
+import Housedetailst from '@/views/putaway/house-details'
+
+// // 文章管理
+// import ArticleMan from '@/views/articleMan.vue'
+// import Articlelist from '@/views/article/article-list.vue'
+// import Articlerelease from '@/views/article/article-release'
 
 
 
-
+Vue.use(Router)
 
 export default new Router({
   mode:'history',
   routes: [
     {
       path: '/',
-      name: 'ArticleMan',
-      component: ArticleMan,
+      name: 'PutawayMan',
+      component: PutawayMan,
       children:[
          {
          	path:'/',
@@ -38,6 +35,25 @@ export default new Router({
          	component:Housedetailst
          }
       ]
-    }
+    },
+    
+    // 文章管理
+    // {
+    //   path: '/',
+    //   name: 'ArticleMan',
+    //   component: ArticleMan,
+    //   children:[
+    //      {
+    //      	path:'/',
+    //      	name:'Articlelist',
+    //      	component:Articlelist
+    //      },
+    //      {
+    //      	path:'/articlerelease',
+    //      	name:'Articlerelease',
+    //      	component:Articlerelease
+    //      }
+    //   ]
+    // },
   ]
 })
