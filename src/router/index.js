@@ -21,20 +21,8 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'PutawayMan',
-      component: PutawayMan,
-      children:[
-         {
-         	path:'/',
-         	name:'Houselist',
-         	component:Houselist
-         },
-         {
-         	path:'/housedetailst',
-         	name:'Housedetailst',
-         	component:Housedetailst
-         }
-      ]
+      name: 'Houselist',
+      component: Houselist,
     },
     
     // 文章管理

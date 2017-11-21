@@ -117,17 +117,10 @@
 </template>
 
 <script>
-  // import Filter from '../../components/filter.vue'
-
-  // export default {
-  //   components: {
-  //     filter:Filter,
-  //   }
-  // }
 
 
 import Filter from '@/components/filter.vue'
-// import Filter from '../../components/filter.vue'
+
 
   export default {
     data(){
@@ -136,7 +129,6 @@ import Filter from '@/components/filter.vue'
 
     components: {
       filterMain:Filter,
-      // filter:Filter,
     }
   }
 
