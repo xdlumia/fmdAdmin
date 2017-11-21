@@ -1,71 +1,11 @@
-/*清除内外边框*/
-html,body{ width:100%; height: 100%; }
-body,h1,h2,h3,h4,h5,h6,hr,p,
-blockquote,/*结构元素*/
-dl,dt,dd,ul,ol,li,/*list elements 列表元素*/
-pre,/*文本格式元素*/
-form,button,input,textarea,/*form elements 表单元素*/
-th,td,/*表格元素*/
-img/*img elements 图片元素*/{
-	border:none;
-	padding:0; 
-	margin:0;
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	-ms-box-sizing: border-box;
-	box-sizing: border-box;
-}
-select {
-  /*将默认的select选择框样式清除*/
-  /*appearance:none;
-  -moz-appearance:none;
-  -webkit-appearance:nofpopupboxne;*/
-}
-/*清除ie的默认选择框样式清除，隐藏下拉箭头*/
-select::-ms-expand { border: none; }
-[v-cloak] { display: none }
 
 
-
-/*设置默认字体*/
-body,
-button,
-input,
-select,
-textarea {
-    font: 14px/1.5 Microsoft Yahei, tahoma, Srial, helvetica, sans-serif;text-rendering: optimizeLegibility;text-size-adjust: 100%;
-    -webkit-font-smoothing: antialiased;
-}
-body{ background-color: #fff }
-h1,h2,h3,h4,h5,h6{ font-weight: normal; }
-button:focus,input:focus,textarea:focus,select:focus{outline:none;}
-/*清除斜体*/
-em,i,var{font-style: normal;}
-/*清除列表元素*/
-ul,li,ol{list-style: none;}
-/*重置超链接元素*/
-a{
-	color: #333;
-	text-decoration:none;
-	outline: 0;
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	-ms-box-sizing: border-box;
-	box-sizing: border-box;
-	-webkit-transition: all .2s;
-	-o-transition: all .2s;
-	transition: all .2s;
-}
-
-
-
-
-.row{ width: 1150px; margin: 0 auto; }
-.container{ background: #fff; padding:30px 0; overflow: hidden; }
-
-i{color: #666;}
+body{ background: #f6f5f8 }
+i{display: inline-block; color: #666;}
 
 /*字体*/
+h2.title{ color: #666; font-size:20px;line-height: 64px; font-weight: 500}
+.b{font-weight: bold;}
 .f12{ font-size: 12px !important; }
 .f14{ font-size: 14px !important; }
 .f16{ font-size: 16px !important; }
@@ -82,8 +22,10 @@ i{color: #666;}
 .mt15{margin-top: 15px;}
 .mt20{margin-top: 20px;}
 .mt30{margin-top: 30px;}
+.mt60{margin-top: 60px;}
 
 .mb0{margin-bottom: 0px;}
+.mb5{margin-bottom: 5px;}
 .mb10{margin-bottom: 10px;}
 .mb15{margin-bottom: 15px;}
 .mb20{margin-bottom: 20px;}
@@ -103,6 +45,32 @@ i{color: #666;}
 .mr20{ margin-right: 20px;}
 .mr30{ margin-right: 30px;}
 
+/*布局*/
+.d-content{background: #fff; box-shadow: 0px 0px 3px rgba(0,0,0,.1)}
+.d-details-content{ width: 710px; }
+.d-main{ width: 1150px; margin:0 auto; }
+.d-inline{display: inline-block;}
+.d-block{display: block;}
+.d-box{box-sizing: border-box;}
+.d-clear{clear: both;}
+
+
+/*浮动*/
+.fl{float: left;}
+.fr{float: right !important}
+
+/*对齐*/
+.al{text-align: left;}
+.ac{text-align: center;}
+.ar{text-align: right;}
+
+
+/*辅助*/
+.d-elip{text-overflow: ellipsis; overflow: hidden; white-space: nowrap;}
+.d-unselect{}
+.d-disabled{background: #e8e8e8; color: #999; cursor: not-allowed}
+.d-show{display: block;}
+.d-hide{display: none;}
 
 
 /*内边距*/
@@ -111,48 +79,100 @@ i{color: #666;}
 .p10{padding:10px;}
 .pl50{padding-left:50px;}
 .pl30{ padding-left: 30px}
-.plr{padding-left:20px;padding-right:20px;}
-.pb60{padding-bottom:60px;}
+.pb50{padding-bottom:50px;}
 
 
-
-.hide{display: none !important;}
-.show{display: block !important;}
-
-.hidden{ overflow:hidden; }
-.visible{overflow: visible !important;}
-
-.elip{ overflow: hidden; text-overflow: ellipsis; white-space: nowrap; } /*文字单行溢出*/
-.textb{font-weight: 600;} /*文字加粗*/
-
-.inline{ display: inline-block; } /*行元素*/
-.block{ display: block; } /*块元素*/
-
-.alink{ color: #2bd9cf; text-decoration: underline; }/*a链接字体颜色*/
-.texthide{ overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }/*文字超出隐藏*/
-.bnone{ font-weight: normal !important; }
-
-
-/*浮动*/
-.fl{float: left;}
-.fr{float: right !important}
-
-/*清除浮动*/
-.clear{clear:both;}
 
 
 /*高度*/
+.h28{ height: 28px; }
+.h150{ height: 150px; }
 .h165{ height: 165px; }
 .h180{ height: 180px !important; }
 
 /*宽度*/
+.w150{width: 150px;}
+.w160{width: 160px;}
+.w240{width: 240px;}
 .w500{ width: 500px; }
 
 
 
 
+/*输入框*/
+.d-input-block,.d-input-inline{position: relative; display: block; width: 100%; margin-bottom: 10px;}
+
+.d-form{ font-size: 0 }
+.d-input-inline{ width: 170px; margin-right: 10px; display: inline-block; vertical-align: middle; }
+.d-input-inline i{position: absolute;right:5px; top:0; font-size: 12px; color: #999; height: 100%;}
 
 
+
+/*面包屑*/
+.d-breadcrumb{ padding:20px 0; }
+
+/*筛选*/
+.d-filter-main{ font-size: 0; padding:15px;}
+.d-filter-item{overflow: hidden;font-size:12px; margin-bottom: 15px;}
+.d-filter-key{float: left; line-height: 14px; width: 55px; display: inline-block; font-weight: bold; }
+.d-filter-val{line-height: 14px; margin-left: 55px; }
+.d-filter-val-tab{ color: #444; }
+.d-filter-val-tab span{ cursor: pointer; }
+.d-filter-val-tab span i{ font-size: 16px;color: #666; margin:0 8px 0 0px; vertical-align: -2px;transform: all .2s }
+.d-filter-val-tab span.active{color: #ff6969}
+.d-filter-val-tab span.active i{transform: rotate(180deg);}
+.d-filter-val-list.b-line{ border-bottom: 1px solid #efefef }
+.d-filter-val-list a{ color: #444; line-height: 28px; margin-right: 10px; }
+
+
+
+/*状态：*/
+.d-status{height: 22px; line-height: 22px; font-weight: 500; display: inline-block;border-radius: 2px; font-size: 13px; color: #999; cursor: pointer; padding:0 7px; background: #f6f5f8; border:1px solid #e5e5e5;transition:all .2s;}
+.d-status[round]{border-radius: 11px;}
+.d-status:hover{opacity: .8}
+
+/*推荐鼠标滑过颜色*/
+.d-status[d-home]:hover{background: #ff6969;color:#fff; border-color:#ff6969}  /*红色*/
+.d-status[d-putaway]:hover{background: #9965cc;color:#fff; border-color:#9965cc}/*紫色*/
+
+/*鼠标滑过青色*/
+.d-status[d-view]:hover,
+.d-status[d-edit]:hover,
+.d-status[d-record]:hover{background: #33ba9b;color:#fff; border-color:#33ba9b }
+
+
+/*鼠标滑过红色*/
+.d-status[d-soldout]:hover,
+.d-status[d-del]:hover{background: #fa5555;color:#fff; border-color:#fa5555}
+
+
+
+/*背景色*/
+.d-bg-gray{ background: #ccc; color: #fff;border-color: #ccc; }  /*灰色*/
+.d-bg-pink{ background: #ff6969; color: #fff;border-color: #ff6969; }/*粉红主色*/
+.d-bg-violet{ background: #9965cc; color: #fff;border-color: #9965cc; } /*紫色*/
+.d-bg-brown{ background: #f1a85f; color: #fff;border-color: #f1a85f; }/*棕色*/
+.d-bg-crimson{ background: #ac0222; color: #fff;border-color: #ac0222; }/*赤红*/
+.d-bg-cyan{ background: #33ba9b; color: #fff;border-color: #33ba9b; }/*青色*/
+.d-bg-blue{ background: #2bb1e9; color: #fff;border-color: #2bb1e9; }/*蓝色*/
+
+
+
+/*修改ele ui部分 缩小ele ui input 框  添加 el-form-small*/ 
+.el-form-small .el-checkbox{ width: 120px; margin-bottom: 10px;}
+.el-form-small .el-checkbox+.el-checkbox{ margin-left: 0;}
+.el-form-small .el-checkbox .el-checkbox__input{line-height: 16px; height: 16px;}
+.el-form-small .el-checkbox__label{ color: #444; font-size: 12px; line-height: 14px; padding-left: 5px; font-weight: 400 }
+.el-form-small .el-checkbox__input.is-checked .el-checkbox__inner, 
+.el-form-small .el-checkbox__input.is-indeterminate .el-checkbox__inner{ background-color: #ff6969;border-color: #ff6969 }
+.el-form-small .el-checkbox__input.is-checked+.el-checkbox__label{color: #ff6969}
+.el-form-small .el-checkbox__inner:hover{border-color: #ff6969 }
+.el-form-small .el-checkbox__input.is-focus .el-checkbox__inner{border-color: #ff6969}
+.el-form-small .el-input__inner{ font-size: 13px !important; height: 35px !important; padding:0 8px;}
+
+
+/*分页*/
+.d-page{  padding:10px 15px; }
 
 
 

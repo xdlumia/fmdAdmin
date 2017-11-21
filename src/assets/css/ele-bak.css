@@ -1,0 +1,61 @@
+/*布局*/
+.d-content{background: #fff; box-shadow: 0px 0px 3px rgba(0,0,0,.1)}
+.d-details-content{ width: 710px; }
+.d-main{ width: 1150px; margin:0 auto; }
+.d-inline{display: inline-block;}
+.d-block{display: block;}
+.d-box{box-sizing: border-box;}
+.d-clear{clear: both;}
+
+
+
+/*辅助*/
+.d-elip{text-overflow: ellipsis; overflow: hidden; white-space: nowrap;}
+.d-unselect{}
+.d-disabled{background: #e8e8e8; color: #999; cursor: not-allowed}
+.d-show{display: block;}
+.d-hide{display: none;}
+
+
+
+/*输入框*/
+.d-input-block,.d-input-inline{position: relative; background: #fff; height: 32px; line-height: 32px; font-size: 13px;display: block; width: 100%; margin-bottom: 10px;}
+
+.d-form{ font-size: 0 }
+.d-input-inline{ width: 170px; margin-right: 10px; display: inline-block; vertical-align: middle; }
+.d-input-inline i{position: absolute;right:5px; top:0; font-size: 12px; color: #999; height: 100%;}
+.d-input,.d-select{position: relative; width: 100%; z-index: 1; height: 100%;border-radius:0; background: rgba(0,0,0,0); border:1px solid #dcdcdc;font-size: 13px; padding-left: 5px; box-sizing: border-box;transition: all .2s}
+.d-input:focus{border:1px solid #999;}
+/*选项框*/
+/*.d-select{position: relative; width: 100%; height: 100%;}
+.d-select:before{position: absolute;right: 10px; top:9px; display: block; content: ""; width: 7px; height: 7px; border:1px solid #bbb; border-left:none; border-top:none; transform:rotate(45deg); content: "";}
+*/
+
+/*面包屑*/
+.d-breadcrumb{ padding:20px 0; }
+
+/*筛选*/
+.d-filter-main{ font-size: 0; padding:15px;}
+.d-filter-item{overflow: hidden;font-size:12px; margin-bottom: 15px;}
+.d-filter-key{float: left; line-height: 14px; width: 55px; display: inline-block; font-weight: bold; }
+.d-filter-val{line-height: 14px; margin-left: 55px; }
+.d-filter-val-tab{ color: #444; }
+.d-filter-val-tab span{ cursor: pointer; }
+.d-filter-val-tab span i{ font-size: 16px;color: #666; margin:0 8px 0 0px; vertical-align: -2px;transform: all .2s }
+.d-filter-val-tab span.active{color: #ff6969}
+.d-filter-val-tab span.active i{transform: rotate(180deg);}
+.d-filter-val-list.b-line{ border-bottom: 1px solid #efefef }
+.d-filter-val-list a{ color: #444; line-height: 28px; margin-right: 10px; }
+
+
+
+/*修改ele ui部分*/
+.d-filter-val-list .el-checkbox{ width: 120px; margin-bottom: 10px;}
+.d-filter-val-list .el-checkbox+.el-checkbox{ margin-left: 0;}
+.d-filter-val-list .el-checkbox .el-checkbox__input{line-height: 16px; height: 16px;}
+.d-filter-val-list .el-checkbox__label{ color: #444; font-size: 12px; line-height: 14px; padding-left: 5px; font-weight: 400 }
+.d-filter-val-list .el-checkbox__input.is-checked .el-checkbox__inner, 
+.d-filter-val-list .el-checkbox__input.is-indeterminate .el-checkbox__inner{ background-color: #ff6969;border-color: #ff6969 }
+.d-filter-val-list .el-checkbox__input.is-checked+.el-checkbox__label{color: #ff6969}
+.d-filter-val-list .el-checkbox__inner:hover{border-color: #ff6969 }
+.d-filter-val-list .el-checkbox__input.is-focus .el-checkbox__inner{border-color: #ff6969}
