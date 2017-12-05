@@ -1,0 +1,271 @@
+<!DOCTYPE HTML>
+<html lang="zh-cn">
+<head>
+<meta charset="utf-8" />
+<title>房源对比</title>
+<meta name="keywords" content="#" />
+<meta name="description" content="#" />
+<meta charset="utf-8" />
+<!-- 强制使用高版本浏览器渲染 -->
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<!-- 强制使用webkit -->
+<meta name="renderer" content="webkit">
+<!-- 禁止百度移动端转码 -->
+<meta http-equiv="Cache-Control" content="no-transform " />
+<!-- 清除缓存刷新 -->
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Cache-Control" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<link rel="stylesheet" type="text/css" href="http://at.alicdn.com/t/font_479217_y60ma0svztsgiudi.css">
+<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+<link rel="stylesheet" type="text/css" href="assets/css/base.css">
+<link rel="stylesheet" type="text/css" href="assets/css/header-nav.css"> <!-- 导航 -->
+<link rel="stylesheet" type="text/css" href="assets/css/house-contrast.css"> <!-- 房源详情页 -->
+<link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+<script src="https://unpkg.com/vue"></script>
+<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+</head>
+<body>
+<div id="contrast" style="background: #fff;">
+    <header class="header">
+        <el-menu
+          class="el-menu-demo"
+          mode="horizontal"
+          background-color="#222"
+          text-color="#fff"
+          active-text-color="#ffd04b">
+          <div class="d-main">
+              <a href="/" class="logo">房脉动管理系统</a>
+              <el-menu-item index="1">上架管理</el-menu-item>
+              <el-menu-item index="2"><a>文章管理</a></el-menu-item>
+              <el-menu-item index="3"><a>用户管理</a></el-menu-item>
+              <el-menu-item index="4"><a>预约管理</a></el-menu-item>
+              <el-menu-item index="5"><a>系统设置</a></el-menu-item>
+              <div class="user">
+                  你好,
+                  <span class="user-name">FJD</span>
+                  <span class="logout ml20">退出</span>
+              </div>
+          </div>
+        </el-menu>
+    </header>
+    <div class="side-nav">
+        <div class="title b">上架管理</div>
+        <div class="nav-main">
+            <a class="nav-item active">二手房</a>
+            <a class="nav-item">租房</a>
+            <a class="nav-item">写字楼出租</a>
+            <a class="nav-item">写字楼出售</a>
+            <a class="nav-item">商铺出租</a>
+        </div>
+    </div>
+    
+     <div class="h-info-contrast">
+        <div class="contrast-top">
+          <div class="d-main">
+             <div class="contrast-handle f24" style="width: 252px;">对比房源</div>
+             <div class="contrast-title" style="width: 300px;">
+                <el-checkbox v-model="checked">全选</el-checkbox>
+                <div class="img">
+                  <img src="" alt="">
+                  <div class="status d-bg-cyan">现</div>
+                </div>
+                <div class="title">
+                  <el-radio v-model="radio" label="1"></el-radio>主标题主标题主标题主标题主标题主标题主标题
+                </div>
+                <div class="d-text-orange b mt10 f16">395万元</div>
+             </div>
+             <div class="contrast-title" style="width: 300px;">
+                <el-checkbox v-model="checked">全选</el-checkbox>
+                <div class="img">
+                  <img src="" alt="">
+                  <div class="status d-bg-orange">改</div>
+                </div>
+                <div class="title">
+                  <el-radio v-model="radio" label="1"></el-radio>主标题主标题主标题主标题主标题主标题主标题
+                </div>
+                <div class="d-text-orange b mt10 f16">395万元</div>
+             </div>
+           </div>
+        </div>
+        <!-- 主要信息对比 -->
+        <div class="d-main">
+          <div class="table-main-info">
+            <template>
+              <el-table
+                :data="tableData"
+                border>
+                <el-table-column
+                  label="主要信息"
+                  prop=name
+                  width="250">
+                </el-table-column>
+                <el-table-column
+                  label=""
+                  width="300">
+                  <template slot-scope="scope">
+                    <el-radio v-model="radio" label="2"></el-radio>
+                    <span style="margin-left: 10px">{{ scope.row.address }}</span>
+                  </template>
+                </el-table-column>
+                <el-table-column 
+                  label=""
+                  width="300">
+                  <template slot-scope="scope">
+                    <el-radio v-model="radio" label="2"></el-radio>
+                    <span style="margin-left: 10px">{{ scope.row.data }}</span>
+                  </template>
+                </el-table-column>
+              </el-table>
+            </template>
+          </div>
+          <!-- 基本属性 -->
+          <div class="table-base-info">
+            <template>
+              <el-table
+                :data="tableData"
+                border>
+                <el-table-column
+                  label="主要信息"
+                  prop=name
+                  width="250">
+                </el-table-column>
+                <el-table-column
+                  label=""
+                  width="300">
+                  <template slot-scope="scope">
+                    <el-radio v-model="radio" label="2"></el-radio>
+                    <span style="margin-left: 10px">{{ scope.row.address }}</span>
+                  </template>
+                </el-table-column>
+                <el-table-column 
+                  label=""
+                  width="300">
+                  <template slot-scope="scope">
+                    <el-radio v-model="radio" label="2"></el-radio>
+                    <span style="margin-left: 10px">{{ scope.row.data }}</span>
+                  </template>
+                </el-table-column>
+              </el-table>
+            </template>
+          </div>
+          <!-- 交易属性 -->
+          <div class="table-deal-info">
+            <template>
+              <el-table
+                :data="tableData"
+                border>
+                <el-table-column
+                  label="主要信息"
+                  prop=name
+                  width="250">
+                </el-table-column>
+                <el-table-column
+                  label=""
+                  width="300">
+                  <template slot-scope="scope">
+                    <el-radio v-model="radio"></el-radio>
+                    <span style="margin-left: 10px">{{ scope.row.address }}</span>
+                  </template>
+                </el-table-column>
+                <el-table-column 
+                  label=""
+                  width="300">
+                  <template slot-scope="scope">
+                    <el-radio v-model="radio"></el-radio>
+                    <span style="margin-left: 10px">{{ scope.row.data }}</span>
+                  </template>
+                </el-table-column>
+              </el-table>
+            </template>
+          </div>
+          <!-- 房源照片 -->
+          <div class="table-deal-info">
+            <template>
+              <el-table
+                :data="tableData"
+                border>
+                <el-table-column
+                  label="房源照片"
+                  prop=name
+                  width="250">
+                </el-table-column>
+                <el-table-column
+                  label=""
+                  width="300">
+                  <template slot-scope="scope">
+                    <el-radio v-model="radio"></el-radio>
+                    <div class="tabimg">
+                      <img src="{{ scope.row.address }}" alt="">
+                    </div>
+                  </template>
+                </el-table-column>
+                <el-table-column 
+                  label=""
+                  width="300">
+                  <template slot-scope="scope">
+                    <el-radio v-model="radio"></el-radio>
+                    <div class="tabimg">
+                      <img src="{{ scope.row.address }}" alt="">
+                    </div>
+                  </template>
+                </el-table-column>
+              </el-table>
+            </template>
+          </div>
+       </div>
+       <div class="bottom-handle">
+         <div class="d-main">
+           <el-button size="small" type="primary">立即保存</el-button>
+           <el-button size="small">编辑</el-button>
+           <el-button size="small">取消</el-button>
+         </div>
+       </div>
+     </div>
+</div>
+
+
+
+<script>
+
+const cityOptions = ['上海', '北京', '广州', '深圳',];
+  var Main = {
+    data() {
+      return {
+        tableData: [{
+          date: '2016-05-03',
+          name: '王小虎',
+          address: '上海市普陀区金沙江路 1518 弄'
+        }, {
+          date: '2016-05-02',
+          name: '王小虎',
+          address: '上海市普陀区金沙江路 1518 弄'
+        }, {
+          date: '2016-05-04',
+          name: '王小虎',
+          address: '上海市普陀区金沙江路 1518 弄'
+        }, {
+          date: '2016-05-01',
+          name: '王小虎',
+          address: '上海市普陀区金沙江路 1518 弄'
+        }, {
+          date: '2016-05-08',
+          name: '王小虎',
+          address: '上海市普陀区金沙江路 1518 弄'
+        }, {
+          date: '2016-05-06',
+          name: '王小虎',
+          address: '上海市普陀区金沙江路 1518 弄'
+        }, {
+          date: '2016-05-07',
+          name: '王小虎',
+          address: '上海市普陀区金沙江路 1518 弄'
+        }]
+      }
+    },
+  };
+var Ctor = Vue.extend(Main)
+new Ctor().$mount('#contrast')
+</script>  
+</body>
+</html>

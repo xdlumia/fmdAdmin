@@ -1,0 +1,247 @@
+<!DOCTYPE HTML>
+<html lang="zh-cn">
+<head>
+<meta charset="utf-8" />
+<title>网站设置</title>
+<meta name="keywords" content="#" />
+<meta name="description" content="#" />
+<meta charset="utf-8" />
+<!-- 强制使用高版本浏览器渲染 -->
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<!-- 强制使用webkit -->
+<meta name="renderer" content="webkit">
+<!-- 禁止百度移动端转码 -->
+<meta http-equiv="Cache-Control" content="no-transform " />
+<!-- 清除缓存刷新 -->
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Cache-Control" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<link rel="stylesheet" type="text/css" href="http://at.alicdn.com/t/font_479217_ortdgx668r9c0udi.css">
+<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+<link rel="stylesheet" type="text/css" href="assets/css/base.css">
+<link rel="stylesheet" type="text/css" href="assets/css/header-nav.css"> <!-- 导航 -->
+<link rel="stylesheet" type="text/css" href="assets/css/house-list.css"> <!-- 房源列表页 -->
+<link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+<script src="https://unpkg.com/vue"></script>
+<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+</head>
+<body>
+<div id="index">
+    <header class="header">
+        <el-menu
+          :default-active="activeIndex"
+          class="el-menu-demo"
+          mode="horizontal"
+          background-color="#222"
+          text-color="#fff"
+          active-text-color="#33ba9b">
+          <div class="d-main">
+              <a href="/" class="logo">房脉动管理系统</a>
+              <el-menu-item index="1">上架管理</el-menu-item>
+              <el-menu-item index="2"><a>文章管理</a></el-menu-item>
+              <el-menu-item index="3"><a>用户管理</a></el-menu-item>
+              <el-menu-item index="4"><a>预约管理</a></el-menu-item>
+              <el-menu-item index="5"><a>系统设置</a></el-menu-item>
+              <div class="user">
+                  你好,
+                  <span class="user-name">FJD</span>
+                  <span class="logout ml20">退出</span>
+              </div>
+          </div>
+        </el-menu>
+    </header>
+    <div class="side-nav">
+        <div class="title b">上架管理</div>
+        <div class="nav-main">
+            <a class="nav-item active">二手房</a>
+            <a class="nav-item">租房</a>
+            <a class="nav-item">写字楼出租</a>
+            <a class="nav-item">写字楼出售</a>
+            <a class="nav-item">商铺出租</a>
+        </div>
+    </div>
+
+    <div class="d-main" style="padding-top: 80px">
+        
+        <h2 class="title">网站设置</h2>
+        <hr>
+        <div class="setting-left fl" style="width: 400px;">
+            <div class="d-block">
+              <h4 class="title mt15 mb5"><span class="d-text-pink">*</span>公司名称</h4>
+              <input type="text" class="d-input-block d-lg" placeholder="请输入公司名称，最多输入30字" name="">
+            </div>
+            <div class="d-block">
+              <h4 class="title mt15 mb5"><span class="d-text-pink">*</span>公司简称</h4>
+              <input type="text" class="d-input-block d-lg" placeholder="请输入公司简称，最多输入5字" name="">
+            </div>
+            <div class="d-block">
+              <h4 class="title mt15 mb5"><span class="d-text-pink"> </span>网站宣传语</h4>
+              <input type="text" class="d-input-block d-lg" placeholder="请输入网站宣传语，最多输入12字" name="">
+            </div>
+            <div class="d-block">
+              <h4 class="title mt15 mb5"><span class="d-text-pink">*</span>访问网址</h4>
+              <input type="text" class="d-input-block d-lg" placeholder="请输入公司网址，http://" name="">
+            </div>
+            <div class="d-block">
+              <h4 class="title mt15 mb5">
+                <span class="d-text-pink">*</span>请选择城市业务
+                <div class="d-inline"><span class="d-input-inline d-sm" style="width: 70px;">同站切换</span></div>
+              </h4>
+            </div>
+            <div class="d-block">
+              <h4 class="title mt15 mb5">
+                <span class="d-text-gray">已选择城市</span>
+                <div class="d-inline">
+                  <el-tag size="mini" type="danger" closable>北京</el-tag>
+                  <el-tag size="mini" type="danger" closable>北京</el-tag>
+                  <el-tag size="mini" type="danger" closable>北京</el-tag>
+                  <el-tag size="mini" type="danger" closable>北京</el-tag>
+                </div>
+              </h4>
+            </div>
+            <div class="d-block">
+              <h4 class="title mt15 mb5">网络经营许可证</h4>
+              <input type="text" class="d-input-block d-lg" placeholder="请输入网络经营许可证" name="">
+            </div>
+            <div class="d-block">
+              <h4 class="title mt15 mb5">公安备案证</h4>
+              <input type="text" class="d-input-block d-lg" placeholder="请输入公安备案证" name="">
+            </div>
+            <div class="d-block">
+              <h4 class="title mt15">客服电话</h4>
+              <input type="text" class="d-input-block d-lg" placeholder="请输入客服电话" name="">
+            </div>
+        </div>
+        <div class="setting-right fr" style="width: 600px">
+            <div class="d-block">
+              <h4 class="title mt15 mb5">企业LOGO <span class="d-text-gray">建议上传高度50px的透明背景（格式png）图片</span></h4>
+            </div>
+            <div class="d-block mt10">
+              <h4 class="title mt15 mb5 d-inline">彩色LOGO：</h4>
+              <div class="set-img d-inline">
+                <el-upload
+                  class="avatar-uploader"
+                  action="https://jsonplaceholder.typicode.com/posts/"
+                  :show-file-list="false"
+                  :on-success="colourUploadHandle"
+                  :before-upload="beforeAvatarUploadColour">
+                  <img v-if="colourLogoUrl" :src="colourLogoUrl" class="avatar">
+                  <i v-else class="el-icon-plus avatar-uploader-icon"></i>
+                </el-upload>
+              </div>
+            </div>
+            <div class="d-block mt10">
+              <h4 class="title mt15 mb5 d-inline">白色LOGO：</h4>
+              <div class="set-img d-inline">
+                <el-upload
+                  class="avatar-uploader"
+                  action="https://jsonplaceholder.typicode.com/posts/"
+                  :show-file-list="false"
+                  :on-success="grayUploadHandle"
+                  :before-upload="beforeAvatarUploadWhite">
+                  <img v-if="whiteLogoUrl" :src="whiteLogoUrl" class="avatar">
+                  <i v-else class="el-icon-plus avatar-uploader-icon"></i>
+                </el-upload>
+              </div>
+            </div>
+            <div class="d-block">
+              <h4 class="title mt15 mb5">首页背景图 <span class="d-text-gray">上传图片分辨率为1920*640px最佳</span></h4>
+            </div>
+            <div class="set-bg-img">
+              <el-upload
+                class="upload-demo"
+                drag
+                action="https://jsonplaceholder.typicode.com/posts/"
+                multiple>
+                <i class="el-icon-upload"></i>
+                <div class="el-upload__text">将文件拖到此处，或<em>点击上传</em></div>
+                <div class="el-upload__tip" slot="tip">只能上传jpg/png文件，且不超过500kb</div>
+              </el-upload>
+            </div>
+        </div>
+        <div class="d-clear"></div>
+        <hr class="mt10">
+    </div>
+</div>
+
+
+
+<script>
+
+  var Main = {
+    data() {
+      return {
+        colourLogoUrl: '', //彩色logo
+        whiteLogoUrl: ''   //白色logo
+      };
+    },
+     methods: {
+      colourUploadHandle(res, file) { //彩色logo上传
+        this.colourLogoUrl = URL.createObjectURL(file.raw);
+      },
+      beforeAvatarUploadColour(file) {
+        const isPNG = file.type === 'image/jpeg';
+        const isLt1M = file.size / 1024 / 1024 < 0.1;
+
+        if (!isPNG) {
+          this.$message.error('上传头像图片只能是 PNG 格式!');
+        }
+        if (!isLt1M) {
+          this.$message.error('上传头像图片大小不能超过 100kB!');
+        }
+        return isPNG && isLt1M;
+      },
+
+      grayUploadHandle(res, file) { //灰色logo上传
+        this.whiteLogoUrl = URL.createObjectURL(file.raw);
+      },
+      beforeAvatarUploadWhite(file) {
+        const isPNG = file.type === 'image/jpeg';
+        const isLt1M = file.size / 1024 / 1024 < 0.1;
+
+        if (!isPNG) {
+          this.$message.error('上传头像图片只能是 PNG 格式!');
+        }
+        if (!isLt1M) {
+          this.$message.error('上传头像图片大小不能超过 100kb!');
+        }
+        return isPNG && isLt1M;
+      }
+    }
+
+  };
+var Ctor = Vue.extend(Main)
+new Ctor().$mount('#index')
+</script>  
+<style>
+  .set-img .avatar-uploader .el-upload {
+    border: 1px dashed #d9d9d9;
+    border-radius: 6px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    vertical-align: middle;
+  }
+  .set-img .avatar-uploader .el-upload:hover {
+    border-color: #ff6969;
+  }
+  .set-img .avatar-uploader-icon {
+    font-size: 28px;
+    color: #8c939d;
+    width: 80px;
+    height: 80px;
+    line-height: 80px;
+    text-align: center;
+  }
+  .set-img .avatar {
+    width: 80px;
+    height: 80px;
+    display: block;
+    object-fit: cover;
+  }
+  
+
+  .set-bg-img .el-upload-dragger{ display: block; width: 600px; height: 200px; }
+</style>
+</body>
+</html>

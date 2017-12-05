@@ -1,7 +1,9 @@
 @import './reset.css';
 @import './base.css';
 
-@import './login.css';
-
+@import './swiper.css';
 @import './header-nav.css';
+@import './house-details.css';
 @import './house-list.css';
+@import './house-contrast.css';
+@import './village-details.css';

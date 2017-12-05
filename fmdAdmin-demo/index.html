@@ -100,8 +100,15 @@
                             <span class="active">总价<i class="iconfont icon-arrow-down"></i></span>
                             <span>地铁<i class="iconfont icon-arrow-down"></i></span>
                         </div>
-                        <div class="d-filter-val-list">
-                            <el-checkbox v-for="city in cities" :label="city" :key="city">{{city}}</el-checkbox>
+                        <div class="d-filter-val-list d-filter-custom">
+                           <div class="d-filter-val-con">
+                             <el-checkbox v-for="city in cities" :label="city" :key="city">{{city}}</el-checkbox>
+                             <div class="d-filter-custom-box d-inline">
+                               <input type="text"> - <input type="text"> 元
+                               <button type="button" class="btn el-icon-search"></button>
+                             </div>
+                           </div>
+                           <span class="filter-custom-btn">+自定义属性</span>
                         </div>
                     </div>
                 </div>
@@ -118,12 +125,12 @@
                 <div class="d-filter-item">
                     <div class="d-filter-key">装修</div>
                     <div class="d-filter-val">
-                        <div class="d-filter-val-list">
-                           <el-select v-model="form.region" placeholder="活动区域">
-                            <el-option label="区域一" value="shanghai"></el-option>
-                            <el-option label="区域二" value="beijing"></el-option>
-                          </el-select>
-                        </div>
+                        <select name="" id="" class="d-input-inline">
+                          <option value="dsa">fsdfsd</option>
+                          <option value="dsa">fsdfsd</option>
+                          <option value="dsa">fsdfsd</option>
+                        </select>
+                        <input type="text" class="d-input-block">
                     </div>
                 </div>
             </div>
@@ -249,7 +256,7 @@
 
 <script>
 
-const cityOptions = ['上海', '北京', '广州', '深圳',];
+const cityOptions = ['上海', '北京', '广州', '深圳','上海', '北京', '广州', '深圳','上海', '北京', '广州', '深圳','上海', '北京', '广州', '深圳',];
   var Main = {
     data() {
       return {

@@ -2,7 +2,7 @@
 .search-main{padding:25px 0; line-height:45px; font-size: 0; }
 .search-main .logo{ height: 45px; display: inline-block; vertical-align: middle; margin-right: 20px; }
 .search-main .logo img{display: block; height: 100%;}
-.search-main .name{ vertical-align: middle; display: inline-block; min-width: 50px; text-align: center; background: #ff6666; color: #fff; font-size: 14px; height: 24px; line-height: 24px;}
+.search-main .name{ vertical-align: middle; padding:0 5px; display: inline-block; min-width: 50px; text-align: center; background: #ff6666; color: #fff; font-size: 14px; height: 24px; line-height: 24px;}
 .seachr-box{position: relative; padding:0 10px; box-sizing: border-box; box-shadow: 0 0 5px rgba(0,0,0,.1); width: 700px; height: 45px; display: inline-block; vertical-align: middle; }
 .seachr-box input{ width: 100%; height: 100%; }
 .seachr-box i{ position: absolute; right: 0; top:0;font-size:28px; color: #999; width: 50px; height: 50px; line-height: 50px; text-align: center; }
@@ -14,5 +14,190 @@
 .house-details h3.title{ font-size: 24px; color: #333; line-height: 100px;}
 
 .d-info-block{position: relative; overflow:hidden; border-top:1px solid #efefef; padding-top: 20px;}
-.d-info-title{ float: left; line-height: 40px; color: #666;}
+.d-info-title{ float: left; line-height: 40px; color: #666;font-size: 13px;}
+.d-input-w{ width: 100%; }
 .d-info-con{ margin-left: 120px; width: 560px;}
+.d-info-block .d-input{ width: 120px !important; }
+.d-info-block .el-input__inner{ width: 120px !important; }
+.d-info-block .el-input{ width: 120px !important; }
+.details-title-w .el-input__inner{width: 120px !important;}
+
+.d-input-w .el-input,
+.d-input-w .el-input__inner{ width: 100% !important }
+.details-title-w .el-input{width: 130px !important;}
+
+.d-shux{border-bottom:1px solid #efefef;padding-bottom: 20px;}
+.d-shux .el-input,
+.d-shux .el-input__inner {width: 120px !important}
+.d-cx .el-select .el-input input{
+	width: 130px !important;
+}
+.d-cx{
+	padding-right: 10px;
+}
+.d-zhi{
+	font-size: 14px;
+	color: #333;
+	padding-left: 22px;
+}
+.details-title div{
+	float: left;
+}
+.d-jian{
+	color: #5a5e66;
+	font-size: 13px;
+}
+.details-title{
+	height: 173px;
+	width: 1150px;
+}
+#d-jiegou{
+	width: 120px;
+}
+#d-jiegou ~ .el-input__suffix{
+	right: -22px;
+}
+#d-wtime{
+	width: 110px;
+}
+.d-del{
+	padding: 6px 9px;
+}
+.d-left{
+	padding: 0 13px !important;
+}
+.pt30{
+	padding-top: 30px;
+}
+.d-input{
+	width: 100px;
+    padding-left: 16px;
+}
+.d-diy{
+	margin-top: 20px;
+}
+.fl .jzjg .el-input{
+	width: 154px !important;
+}
+.fl .jzjg .el-input input{
+	width: 154px !important;
+}
+.d-rad{
+	margin-left: 20px;
+}
+.el-table--fit{
+	margin-top: 10px;
+}
+/*.el-checkbox{
+	width: 100% !important;
+}*/
+.d-fenjian{
+	width: 95px;
+	margin-left: -26px;
+}
+.seachr-box i{
+	font-size: 20px;
+	font-weight: bold;
+}
+.zhxi{
+	padding-top: 20px;
+}
+/*.d-shi .el-input--suffix,
+.d-shi .el-input__inner{
+	width: 68px !important;
+}*/
+.el-radio+.el-radio{
+	margin-left: 16px;
+}
+.el-radio__input.is-checked .el-radio__inner{
+	border:none;
+	background:#999 ;
+}
+.el-radio__inner{
+	width: 11px !important;
+	height: 11px !important; 
+}
+.el-radio__input.is-checked+.el-radio__label{
+	color: #999;
+}
+.d-jia{
+	width: 710px;
+	height: 50px;
+	background: #fff;
+}
+.d-jiaa{
+	margin-left: 15px;
+	margin-top: 12px;
+}
+.d-fjtitle{
+	margin-top: 15px;
+	width: 710px;
+	height: 45px;
+	background: #fff;
+    border-bottom: 1px solid #e6ebf5;
+    line-height: 45px;
+}
+.d-title{
+	float: left;
+	padding-right:59px;
+	color: #878d99;
+	font-weight: bold;
+}
+.d-xuhao{
+	padding-left: 11px;
+}
+.d-list{
+	width: 710px;
+	height: 70px;
+	background: #fff;
+	border-bottom: 1px solid #e6ebf5;
+}
+.d-list input{
+	width: 79px;
+	height: 35px;
+	border: ;
+}
+.d-input{
+	margin-top: 15px;
+	padding:0 22px;
+}
+.d-caozuo{
+	padding-left: 24px;
+}
+.breadspan{
+	cursor: pointer;
+	font-weight: normal;
+	color: #999 !important;
+}
+.breadspan:hover{
+	text-decoration: underline;
+}
+.el-breadcrumb__inner, .el-breadcrumb__inner a{
+	color: #999 !important;
+	font-weight: normal;
+}
+/*.d-fwpeit{
+	width: 100%;
+	height: 200px;
+}
+.d-info-title{
+	width: 100%;
+}*/
+.pt{
+	float: none;
+}
+/*.d-jd{
+	width: 99%;
+	height: 25px;
+	border: 1px solid rgba(228, 228, 228, 1);
+	margin-top: 15px;
+	position: relative;
+}
+.d-jd span{
+	font-size: 12px;
+	position: absolute;
+	color: #999;
+	top: -11px;
+	left: 8px;
+	z-index: 1;
+}*/

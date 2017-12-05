@@ -1,0 +1,171 @@
+<!DOCTYPE HTML>
+<html lang="zh-cn">
+<head>
+<meta charset="utf-8" />
+<title>房脉动后台管理系统吧</title>
+<meta name="keywords" content="#" />
+<meta name="description" content="#" />
+<meta charset="utf-8" />
+<!-- 强制使用高版本浏览器渲染 -->
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<!-- 强制使用webkit -->
+<meta name="renderer" content="webkit">
+<!-- 禁止百度移动端转码 -->
+<meta http-equiv="Cache-Control" content="no-transform " />
+<!-- 清除缓存刷新 -->
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Cache-Control" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+<link rel="stylesheet" type="text/css" href="assets/css/base.css">
+<link rel="stylesheet" type="text/css" href="assets/css/header-nav.css"> <!-- 导航 -->
+<link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+<script src="https://unpkg.com/vue"></script>
+<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+</head>
+<body>
+<div id="index">
+    <header class="header">
+        <el-menu
+          :default-active="activeIndex"
+          class="el-menu-demo"
+          mode="horizontal"
+          background-color="#222"
+          text-color="#fff"
+          active-text-color="#33ba9b">
+          <div class="d-main">
+              <a href="/" class="logo">房脉动管理系统</a>
+              <el-menu-item index="1">上架管理</el-menu-item>
+              <el-menu-item index="2"><a>文章管理</a></el-menu-item>
+              <el-menu-item index="3"><a>用户管理</a></el-menu-item>
+              <el-menu-item index="4"><a>预约管理</a></el-menu-item>
+              <el-menu-item index="5"><a>系统设置</a></el-menu-item>
+              <div class="user">
+                  你好,
+                  <span class="user-name">FJD</span>
+                  <span class="logout ml20">退出</span>
+              </div>
+          </div>
+        </el-menu>
+    </header>
+    <div class="side-nav">
+        <div class="title b">上架管理</div>
+        <div class="nav-main">
+            <a class="nav-item active">二手房</a>
+            <a class="nav-item">租房</a>
+            <a class="nav-item">写字楼出租</a>
+            <a class="nav-item">写字楼出售</a>
+            <a class="nav-item">商铺出租</a>
+        </div>
+    </div>
+
+    <div class="d-main" style="padding-top: 60px">
+        <h2 class="title">二手房上下架管理 <div class="button-box fr"><el-button type="primary" size="mini" plain>新增</el-button><el-button type="danger" size="mini">批量删除</el-button></div></h2>
+
+        <!-- 上下架管理列表 -->
+        <div class="d-content new-list">
+           <template>
+              <el-table
+                ref="multipleTable"
+                :data="tableData"
+                border
+                fit>
+                <el-table-column
+                  type="selection"
+                  width="55">
+                </el-table-column>
+                <el-table-column
+                  width="80"
+                  align=center
+                  label="是否置顶">
+                  <template slot-scope="scope">
+                      <i class="el-icon-star-on stick"></i>
+                    </template>
+                </el-table-column>
+                <el-table-column
+                  prop="date"
+                  label="新闻标题"
+                  width="500">
+                </el-table-column>
+                <el-table-column
+                  prop="name"
+                  width="112"
+                  label="城市">
+                </el-table-column>
+                <el-table-column
+                  prop="name"
+                  width="110"
+                  label="发布人">
+                </el-table-column>
+                <el-table-column
+                  prop="name"
+                  width="112"
+                  label="发布时间">
+                </el-table-column>
+                <el-table-column
+                  prop="address"
+                  width="179"
+                  label="操作">
+                    <template slot-scope="scope">
+                      <el-button
+                        size="mini"
+                        @click="handleEdit(scope.$index, scope.row)">编辑</el-button>
+                      <el-button
+                        size="mini"
+                        type="danger"
+                        @click="handleDelete(scope.$index, scope.row)">删除</el-button>
+                    </template>
+                </el-table-column>
+              </el-table>
+            </template>
+        </div>
+    </div>
+</div>
+
+
+<style>
+  .new-list .el-table td, .new-list .el-table th{ padding:5px 0; }
+  .new-list .stick{font-size:18px; color: #bbb;}
+</style>
+<script>
+
+const cityOptions = ['上海', '北京', '广州', '深圳',];
+  var Main = {
+    data() {
+      return {
+        tableData: [{
+          date: '2016-05-02',
+          name: '王小虎',
+          address: '上海市普陀区金沙江路 1518 弄'
+        }, {
+          date: '2016-05-04',
+          name: '王小虎',
+          address: '上海市普陀区金沙江路 1517 弄'
+        }, {
+          date: '2016-05-01',
+          name: '王小虎',
+          address: '上海市普陀区金沙江路 1519 弄'
+        }, {
+          date: '2016-05-03',
+          name: '王小虎',
+          address: '上海市普陀区金沙江路 1516 弄'
+        }]
+      };
+    },
+    methods: {
+      handleCheckAllChange(val) {
+        this.checkedCities = val ? cityOptions : [];
+        this.isIndeterminate = false;
+      },
+      handleCheckedCitiesChange(value) {
+        let checkedCount = value.length;
+        this.checkAll = checkedCount === this.cities.length;
+        this.isIndeterminate = checkedCount > 0 && checkedCount < this.cities.length;
+      }
+    }
+  };
+var Ctor = Vue.extend(Main)
+new Ctor().$mount('#index')
+</script>  
+</body>
+</html>

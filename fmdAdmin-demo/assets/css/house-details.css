@@ -14,5 +14,79 @@
 .house-details h3.title{ font-size: 24px; color: #333; line-height: 100px;}
 
 .d-info-block{position: relative; overflow:hidden; border-top:1px solid #efefef; padding-top: 20px;}
-.d-info-title{ float: left; line-height: 40px; color: #666;}
+.d-info-title{ float: left; line-height: 40px; color: #666;font-size: 13px;}
 .d-info-con{ margin-left: 120px; width: 560px;}
+
+.d-shux{border-bottom:1px solid #efefef;padding-bottom: 20px;}
+.d-zhi{
+	font-size: 14px;
+	color: #333;
+	padding-left: 22px;
+}
+.d-jian{
+	color: #5a5e66;
+	padding-top: 12px;
+	font-size: 13px;
+}
+#d-jiegou{
+	width: 120px;
+}
+#d-jiegou ~ .el-input__suffix{
+	right: -22px;
+}
+#d-wtime{
+	width: 110px;
+}
+.d-del{
+	padding: 6px 9px;
+}
+.pt30{
+	padding-top: 30px;
+}
+.d-input{
+	width: 100px;
+    padding-left: 16px;
+}
+.d-diy{
+	margin-top: 10px;
+}
+.d-rad{
+	margin-left: 20px;
+}
+.el-table--fit{
+	margin-top: 10px;
+}
+.d-fenjian{
+	width: 95px;
+	margin-left: -26px;
+}
+.seachr-box i{
+	font-size: 20px;
+	font-weight: bold;
+}
+.d-shi{
+	width: 68px !important;
+}
+.el-radio+.el-radio{
+	margin-left: 16px;
+}
+.el-radio__input.is-checked .el-radio__inner{
+	border:none;
+	background:#999 ;
+}
+.el-radio__inner{
+	width: 11px !important;
+	height: 11px !important; 
+}
+.el-radio__input.is-checked+.el-radio__label{
+	color: #999;
+}
+.d-jia{
+	width: 710px;
+	height: 50px;
+	background: #fff;
+}
+.d-jiaa{
+	margin-left: 15px;
+	margin-top: 12px;
+}

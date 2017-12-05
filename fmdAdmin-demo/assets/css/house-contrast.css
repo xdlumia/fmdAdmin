@@ -1,0 +1,18 @@
+
+.h-info-contrast{ font-size: 0; padding-top: 80px; padding-bottom: 80px; }
+.h-info-contrast .contrast-top{ margin-bottom: 30px;border-bottom: 1px solid #eee;box-shadow: 0 3px 3px rgba(0,0,0,.05)}
+.h-info-contrast .contrast-top .contrast-handle,
+.h-info-contrast .contrast-top .contrast-title{height: 280px; border-right:1px solid #eee;  padding:10px; vertical-align: middle; box-sizing: border-box; display: inline-block; font-size: 14px; }
+.h-info-contrast .contrast-title .img{position: relative; height: 150px; background-color: #efefef; margin:5px 0;}
+.h-info-contrast .contrast-title .img img{ display: block; width: 100%; height: 100%; }
+.h-info-contrast .contrast-title .status{position: absolute; right: 0; bottom: 0; line-height: 36px; text-align: center; width: 36px; height: 36px; color: #fff; font-weight: bold; font-size: 22px;}
+.h-info-contrast .contrast-title .title{ font-size: 16px; color: #666; }
+
+.h-info-contrast .tabimg{display: inline-block; vertical-align: middle; width: 240px; height: 135px; background-color: #efefef; }
+.h-info-contrast .tabimg img{ display: block; width: 100%; height: 100%; object-fit: cover; }
+
+.h-info-contrast .red{ color: #ff6969 }
+
+.bottom-handle{padding:10px 0;  position: fixed; z-index: 9; bottom:0; left:0; right: 0; background: #fff; box-shadow: 0px 0px 8px rgba(0,0,0,.1) }
+
+.el-table--border .has-gutter td:nth-last-of-type(2), .el-table--border .has-gutter th:nth-last-of-type(2){border-right: 1px solid #e6ebf5}
